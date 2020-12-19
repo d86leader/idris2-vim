@@ -2,18 +2,12 @@ if exists("b:did_ftplugin")
   finish
 endif
 
-setlocal shiftwidth=2
-setlocal tabstop=2
-if !exists("g:idris_allow_tabchar") || g:idris_allow_tabchar == 0
-	setlocal expandtab
-endif
+let b:did_ftplugin = 1
 
 setlocal comments=s1:{-,mb:-,ex:-},:\|\|\|,:--
 setlocal commentstring=--\ %s
 setlocal iskeyword+=?
 setlocal wildignore+=*.ibc
-
-let b:did_ftplugin = 1
 
 
 nnoremap <buffer> <silent> <LocalLeader>t :call idris2#showType()<ENTER>
